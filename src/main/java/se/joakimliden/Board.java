@@ -1,7 +1,8 @@
 package se.joakimliden;
 
 public class Board {
-    public static int[][] nextBoard() {
-        return new int[0][];
+
+    public static int[][] nextBoard(int[][] inputBoard) {
+        return inputBoard.clone();
     }
 }

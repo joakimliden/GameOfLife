@@ -18,7 +18,7 @@ public class BoardTest {
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0}
         };
-        assertArrayEquals(expected, Board.nextBoard());
+        assertArrayEquals(expected, Board.nextBoard(expected));
     }
 
 }
