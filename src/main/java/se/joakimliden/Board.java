@@ -47,6 +47,6 @@ public class Board {
         if (y < 0 || y >= height) {
             return 0;
         }
-        return 99;
+        return 1;
     }
 }

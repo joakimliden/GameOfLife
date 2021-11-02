@@ -40,10 +40,18 @@ public class BoardTest {
     }
 
     @Test
-    void checkingStateForCellOutsideGridShouldReturnZero() {
+    void checkingStateForCellOutsideGridShouldReturn0() {
         Board board = new Board(5, 8);
 
         assertEquals(0, board.getState(6, -1));
     }
 
+    @Test
+    void checkingStateForAliveCellShouldReturn1() {
+        Board board = new Board(5, 8);
+
+        board.setAlive(2, 2);
+
+        assertEquals(1, board.getState(2, 2));
+    }
 }
