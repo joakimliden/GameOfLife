@@ -47,6 +47,7 @@ public class Board {
         if (y < 0 || y >= height) {
             return 0;
         }
-        return 1;
+
+        return grid[x][y];
     }
 }

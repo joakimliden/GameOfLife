@@ -54,4 +54,11 @@ public class BoardTest {
 
         assertEquals(1, board.getState(2, 2));
     }
+
+    @Test
+    void checkingStateForDeadCellShouldReturn0() {
+        Board board = new Board(5, 8);
+
+        assertEquals(0, board.getState(2, 2));
+    }
 }
