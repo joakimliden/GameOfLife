@@ -34,4 +34,8 @@ public class Board {
 
         return count;
     }
+
+    public int getState(int x, int y) {
+        return 1;
+    }
 }

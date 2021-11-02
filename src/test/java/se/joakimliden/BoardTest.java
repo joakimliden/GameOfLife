@@ -38,4 +38,11 @@ public class BoardTest {
 
         assertEquals(2, board.countAliveNeighbours(2, 3));
     }
+
+    @Test
+    void cellsNextToGridEdgeShouldReturnZeroWhenCheckingForAliveNeighboursOutsideGrid() {
+        Board board = new Board(5, 8);
+
+        assertEquals(0, board.getState(0, 0));
+    }
 }
