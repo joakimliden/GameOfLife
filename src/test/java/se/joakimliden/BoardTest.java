@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BoardTest {
 
     @Test
-    void givenAnEmptyBoardShouldReturnNewEmptyBoard() {
-        int[][] expected = new int[][]{
+    void givenAnEmptyGridShouldReturnNewEmptyGrid() {
+        int[][] inputGrid = new int[][]{
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
@@ -19,7 +19,7 @@ public class BoardTest {
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0}
         };
-        assertArrayEquals(expected, Board.nextBoard(expected));
+        assertArrayEquals(inputGrid, Board.nextBoard(inputGrid));
     }
 
     @Test

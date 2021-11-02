@@ -12,8 +12,8 @@ public class Board {
         grid = new int[width][height];
     }
 
-    public static int[][] nextBoard(int[][] inputBoard) {
-        return inputBoard.clone();
+    public static int[][] nextBoard(int[][] inputGrid) {
+        return inputGrid.clone();
     }
 
     public int setAlive(int x, int y) {
@@ -40,13 +40,11 @@ public class Board {
     }
 
     public int getState(int x, int y) {
-        if (x < 0 || x >= width) {
+        if (x < 0 || x >= width)
             return 0;
-        }
 
-        if (y < 0 || y >= height) {
+        if (y < 0 || y >= height)
             return 0;
-        }
 
         return grid[x][y];
     }
