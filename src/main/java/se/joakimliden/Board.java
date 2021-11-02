@@ -18,6 +18,20 @@ public class Board {
     }
 
     public int countAliveNeighbours(int x, int y) {
-        return 0;
+        int count = 0;
+
+        count += this.grid[x - 1][y - 1];
+        count += this.grid[x][y - 1];
+        count += this.grid[x + 1][y - 1];
+
+        count += this.grid[x - 1][y];
+
+        count += this.grid[x + 1][y];
+
+        count += this.grid[x - 1][y + 1];
+        count += this.grid[x][y + 1];
+        count += this.grid[x + 1][y + 1];
+
+        return count;
     }
 }
