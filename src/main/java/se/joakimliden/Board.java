@@ -16,4 +16,8 @@ public class Board {
         grid[x][y] = 1;
         return grid[x][y];
     }
+
+    public int countAliveNeighbours(int x, int y) {
+        return 0;
+    }
 }
