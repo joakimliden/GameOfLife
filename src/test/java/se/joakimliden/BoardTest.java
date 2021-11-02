@@ -40,9 +40,10 @@ public class BoardTest {
     }
 
     @Test
-    void cellsNextToGridEdgeShouldReturnZeroWhenCheckingForAliveNeighboursOutsideGrid() {
+    void checkingStateForCellOutsideGridShouldReturnZero() {
         Board board = new Board(5, 8);
 
-        assertEquals(0, board.getState(0, 0));
+        assertEquals(0, board.getState(6, -1));
     }
+
 }

@@ -2,9 +2,13 @@ package se.joakimliden;
 
 public class Board {
 
+    private final int width;
+    private final int height;
     private final int[][] grid;
 
     public Board(int width, int height) {
+        this.width = width;
+        this.height = height;
         grid = new int[width][height];
     }
 
@@ -36,6 +40,13 @@ public class Board {
     }
 
     public int getState(int x, int y) {
-        return 1;
+        if (x < 0 || x >= width) {
+            return 0;
+        }
+
+        if (y < 0 || y >= height) {
+            return 0;
+        }
+        return 99;
     }
 }
