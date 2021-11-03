@@ -76,5 +76,16 @@ public class BoardTest {
         Board board = new Board(5,8);
         ConsolePresenter consolePresenter = new ConsolePresenter();
 
+        String expected =
+                "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]\n" +
+                        "[ ][ ][ ][ ][ ]";
+
+        assertEquals(expected, consolePresenter.printBoard(board));
     }
 }
