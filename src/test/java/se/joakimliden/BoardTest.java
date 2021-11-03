@@ -2,6 +2,8 @@ package se.joakimliden;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.Console;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -67,5 +69,12 @@ public class BoardTest {
         Board board = new Board(5, 8);
 
         assertEquals(0, board.countAliveNeighbours(0, 8));
+    }
+
+    @Test
+    void checkingThatPrintBoardMethodHasExpectedOutcomeForEmptyBoard() {
+        Board board = new Board(5,8);
+        ConsolePresenter consolePresenter = new ConsolePresenter();
+
     }
 }
