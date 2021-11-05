@@ -5,7 +5,7 @@ public class Board {
     private final int width;
     private final int height;
     public int[][] grid;
-    public int gridGeneration;
+    public int gridGeneration = 1;
 
     public Board(int width, int height) {
         this.width = width;
@@ -14,6 +14,7 @@ public class Board {
     }
 
     public int[][] nextGrid() {
+        gridGeneration++;
         int[][] nextGrid = new int[width][height];
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
