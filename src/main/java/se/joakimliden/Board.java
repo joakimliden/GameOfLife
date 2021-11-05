@@ -40,6 +40,6 @@ public class Board {
     }
 
     public int getState(int x, int y) {
-        return 1;
+        return 0;
     }
 }
