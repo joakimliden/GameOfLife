@@ -145,4 +145,15 @@ public class BoardTest {
         int after = board.gridGeneration;
         assertEquals(before + 1, after);
     }
+
+    @Test
+    void gridGenerationIncreasesByTwoIfNextGridRunsTwoTimes() {
+
+        int before = board.gridGeneration;
+
+        board.nextGrid();
+        board.nextGrid();
+        int after = board.gridGeneration;
+        assertEquals(before + 2, after);
+    }
 }
