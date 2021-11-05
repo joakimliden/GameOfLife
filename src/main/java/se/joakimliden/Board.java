@@ -17,7 +17,7 @@ public class Board {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 int aliveNeighbours = aliveNeighbours(x, y);
-                if (getState(x, y) == 1 && aliveNeighbours == 2) {
+                if (getState(x, y) == 1 && aliveNeighbours == 2 || aliveNeighbours == 3) {
                     nextGrid[x][y] = 1;
                 }
             }
