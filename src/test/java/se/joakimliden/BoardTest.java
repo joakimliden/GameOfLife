@@ -160,7 +160,6 @@ public class BoardTest {
 
     @Test
     void checkingThatPrintGridMethodHasExpectedOutcomeForEmptyBoard() {
-        Board board = new Board(5, 8);
 
         String expected =
                 """
@@ -180,7 +179,6 @@ public class BoardTest {
 
     @Test
     void checkingThatPrintGridMethodHasExpectedOutcomeForBoardWithAliveCells() {
-        Board board = new Board(5,8);
 
         board.setAlive(0, 0);
         board.setAlive(1, 1);
@@ -199,5 +197,20 @@ public class BoardTest {
                         """;
 
         assertEquals(expected, consolePrint.printGrid(board));
+    }
+
+    @Test
+    void spinnerExpectsToSpin90DegreesAfterOneGeneration() {
+        board.setAlive(1, 0);
+        board.setAlive(1, 1);
+        board.setAlive(1, 2);
+        board.nextGrid();
+
+        Board expected = new Board(5, 8);
+        expected.setAlive(0, 1);
+        expected.setAlive(1, 1);
+        expected.setAlive(2, 1);
+
+        assertEquals(Arrays.deepToString(expected.getGrid()), Arrays.deepToString(board.getGrid()));
     }
 }
