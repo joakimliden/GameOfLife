@@ -68,6 +68,13 @@ public class BoardTest {
     }
 
     @Test
+    void checkingStateForDeadCellShouldReturn0() {
+        Board board = new Board(5, 8);
+
+        assertEquals(0, board.getState(2, 2));
+    }
+
+    @Test
     void checkingForAliveNeighboursOutsideOfGridShouldReturn0() {
 
         assertEquals(0, board.aliveNeighbours(0, 8));
@@ -83,4 +90,5 @@ public class BoardTest {
         int[][] nextGrid = board.nextGrid();
         assertEquals(1, nextGrid[1][1]);
     }
+
 }
