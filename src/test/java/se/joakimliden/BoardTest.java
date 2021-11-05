@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class BoardTest {
 
@@ -22,5 +23,10 @@ public class BoardTest {
         String expected = Arrays.deepToString(board.grid);
         String actual = Arrays.deepToString(board.nextGrid());
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void givenANewBoardShouldNotReturnExactlyTheSameGrid() {
+        assertNotEquals(board.grid, board.nextGrid());
     }
 }
