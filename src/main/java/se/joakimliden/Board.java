@@ -13,7 +13,16 @@ public class Board {
     }
 
     public int[][] nextGrid() {
-        return new int[width][height];
+        int[][] nextGrid = new int[width][height];
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int aliveNeighbours = aliveNeighbours(x, y);
+                if (getState(x, y) == 1 && aliveNeighbours == 2) {
+                    nextGrid[x][y] = 1;
+                }
+            }
+        }
+        return nextGrid;
     }
 
     public int setAlive(int x, int y) {
