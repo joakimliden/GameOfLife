@@ -157,4 +157,24 @@ public class BoardTest {
         int after = board.gridGeneration;
         assertEquals(before + 2, after);
     }
+
+    @Test
+    void checkingThatPrintGridMethodHasExpectedOutcomeForEmptyBoard() {
+        Board board = new Board(5, 8);
+
+        String expected =
+                """
+                        Generation 1
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        [ ][ ][ ][ ][ ]
+                        """;
+
+        assertEquals(expected, consolePrint.printGrid(board));
+    }
 }
