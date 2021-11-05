@@ -2,6 +2,24 @@ package se.joakimliden;
 
 public class Board {
 
+    public static void main(String[] args) {
+        Board board = new Board(10, 10);
+        ConsolePrint consolePrint = new ConsolePrint();
+        int count = 0;
+
+        board.setAlive(1, 0);
+        board.setAlive(2, 1);
+        board.setAlive(0, 2);
+        board.setAlive(1, 2);
+        board.setAlive(2, 2);
+
+        while (count < 32) {
+            consolePrint.printGrid(board);
+            board.nextGrid();
+            count++;
+        }
+    }
+
     private final int width;
     private final int height;
     private int[][] grid;
