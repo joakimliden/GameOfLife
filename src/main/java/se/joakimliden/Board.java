@@ -4,13 +4,29 @@ public class Board {
 
     private final int width;
     private final int height;
-    public int[][] grid;
-    public int gridGeneration = 1;
+    private int[][] grid;
+    private int gridGeneration = 1;
 
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
         this.grid = new int[width][height];
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int[][] getGrid() {
+        return grid;
+    }
+
+    public int getGridGeneration() {
+        return gridGeneration;
     }
 
     public int[][] nextGrid() {

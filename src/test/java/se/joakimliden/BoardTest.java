@@ -21,14 +21,14 @@ public class BoardTest {
     @Test
     void givenANewBoardShouldReturnNewGrid() {
 
-        String expected = Arrays.deepToString(board.grid);
+        String expected = Arrays.deepToString(board.getGrid());
         String actual = Arrays.deepToString(board.nextGrid());
         assertEquals(expected, actual);
     }
 
     @Test
     void givenANewBoardShouldNotReturnExactlyTheSameGrid() {
-        assertNotEquals(board.grid, board.nextGrid());
+        assertNotEquals(board.getGrid(), board.nextGrid());
     }
 
     @Test
@@ -140,21 +140,21 @@ public class BoardTest {
     @Test
     void gridGenerationIncreasesByOneEachTimeNextGridRuns() {
 
-        int before = board.gridGeneration;
+        int before = board.getGridGeneration();
 
         board.nextGrid();
-        int after = board.gridGeneration;
+        int after = board.getGridGeneration();
         assertEquals(before + 1, after);
     }
 
     @Test
     void gridGenerationIncreasesByTwoIfNextGridRunsTwoTimes() {
 
-        int before = board.gridGeneration;
+        int before = board.getGridGeneration();
 
         board.nextGrid();
         board.nextGrid();
-        int after = board.gridGeneration;
+        int after = board.getGridGeneration();
         assertEquals(before + 2, after);
     }
 
