@@ -40,6 +40,12 @@ public class Board {
     }
 
     public int getState(int x, int y) {
-        return 0;
+        if (x < 0 || x >= width)
+            return 0;
+
+        if (y < 0 || y >= height)
+            return 0;
+
+        return grid[x][y];
     }
 }
