@@ -5,6 +5,7 @@ public class Board {
     private final int width;
     private final int height;
     public int[][] grid;
+    public int gridGeneration;
 
     public Board(int width, int height) {
         this.width = width;

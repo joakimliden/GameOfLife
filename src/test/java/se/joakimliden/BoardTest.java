@@ -139,4 +139,15 @@ public class BoardTest {
         int[][] nextGrid = board.nextGrid();
         assertEquals(1, nextGrid[1][1]);
     }
+
+    @Test
+    void gridGenerationIncreasesByOneEachTimeNextGridRuns() {
+        Board board = new Board(5, 8);
+
+        int before = board.gridGeneration;
+
+        board.nextGrid();
+        int after = board.gridGeneration;
+        assertEquals(before + 1, after);
+    }
 }
