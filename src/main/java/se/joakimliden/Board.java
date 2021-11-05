@@ -40,6 +40,7 @@ public class Board {
                 }
             }
         }
+        this.grid =nextGrid;
         return nextGrid;
     }
 
