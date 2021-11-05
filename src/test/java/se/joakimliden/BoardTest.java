@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class BoardTest {
 
+    ConsolePrint consolePrint = new ConsolePrint();
     Board board;
 
     @BeforeEach
