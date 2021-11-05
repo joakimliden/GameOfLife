@@ -34,14 +34,22 @@ public class Board {
         int[][] nextGrid = new int[width][height];
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                int aliveNeighbours = aliveNeighbours(x, y);
-                if (getState(x, y) == 1 && aliveNeighbours == 2 || aliveNeighbours == 3) {
-                    nextGrid[x][y] = 1;
-                }
+                nextGrid[x][y] = isAliveNextGrid(y, x);
             }
         }
-        this.grid =nextGrid;
+        this.grid = nextGrid;
         return nextGrid;
+    }
+
+    private int isAliveNextGrid(int y, int x) {
+        int aliveNeighbours = aliveNeighbours(x, y);
+        if (isAlive(x, y) && aliveNeighbours == 2 || aliveNeighbours == 3)
+            return 1;
+        return 0;
+    }
+
+    private boolean isAlive(int x, int y){
+        return getState(x, y) == 1;
     }
 
     public int setAlive(int x, int y) {
