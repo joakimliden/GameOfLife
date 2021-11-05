@@ -29,4 +29,10 @@ public class BoardTest {
     void givenANewBoardShouldNotReturnExactlyTheSameGrid() {
         assertNotEquals(board.grid, board.nextGrid());
     }
+
+    @Test
+    void settingACellToAliveSetsItAlive() {
+
+        assertEquals(1, board.setAlive(2, 2));
+    }
 }

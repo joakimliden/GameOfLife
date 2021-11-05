@@ -14,4 +14,8 @@ public class Board {
     public int[][] nextGrid() {
         return new int[width][height];
     }
+
+    public int setAlive(int x, int y) {
+        return 0;
+    }
 }
