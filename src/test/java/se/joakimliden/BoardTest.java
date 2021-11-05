@@ -127,4 +127,16 @@ public class BoardTest {
         int[][] nextGrid = board.nextGrid();
         assertEquals(0, nextGrid[1][1]);
     }
+
+    @Test
+    void deadCellWithExactlyThreeAliveNeighboursLivesNextGrid() {
+        Board board = new Board(5, 8);
+
+        board.setAlive(1, 0);
+        board.setAlive(0, 1);
+        board.setAlive(1, 2);
+
+        int[][] nextGrid = board.nextGrid();
+        assertEquals(1, nextGrid[1][1]);
+    }
 }
