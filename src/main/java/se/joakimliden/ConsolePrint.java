@@ -2,12 +2,12 @@ package se.joakimliden;
 
 public record ConsolePrint() {
 
-    public String printBoard(GameOfLife gameOfLife) {
+    public String printGrid(Board board) {
         StringBuilder line = new StringBuilder();
-        line.append("Generation " + gameOfLife.getGridGeneration() + "\n");
-        for (int y = 0; y < gameOfLife.getHeight(); y++) {
-            for (int x = 0; x < gameOfLife.getWidth(); x++) {
-                if (gameOfLife.getGrid()[x][y] == 0) {
+        line.append("Generation " + board.getGridGeneration() + "\n");
+        for (int y = 0; y < board.getHeight(); y++) {
+            for (int x = 0; x < board.getWidth(); x++) {
+                if (board.getGrid()[x][y] == 0) {
                     line.append("[ ]");
                 } else {
                     line.append("[*]");

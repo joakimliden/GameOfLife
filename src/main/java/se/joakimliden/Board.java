@@ -1,13 +1,13 @@
 package se.joakimliden;
 
-public class GameOfLife {
+public class Board {
 
     private final int width;
     private final int height;
     private int gridGeneration = 1;
     private int[][] grid;
 
-    public GameOfLife(int width, int height) {
+    public Board(int width, int height) {
         this.width = width;
         this.height = height;
         grid = new int[width][height];
