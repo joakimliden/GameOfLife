@@ -27,7 +27,6 @@ class BoardTest {
 
     @Test
     void givenANewBoardShouldNotReturnExactlyTheSameGrid() {
-        Board board = new Board(5,8);
         assertNotEquals(board.getGrid(), board.nextGrid());
     }
 
