@@ -67,22 +67,22 @@ public class Board {
         int[][] nextGrid = new int[width][height];
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                int aliveNeighbours = aliveNeighbours(x, y);
-                if (getState(x, y) == 1) {
-                    if (aliveNeighbours < 2) {
-                        nextGrid[x][y] = 0;
-                    } else if (aliveNeighbours == 2 || aliveNeighbours == 3) {
-                        nextGrid[x][y] = 1;
-                    }
-                } else {
-                    if (aliveNeighbours == 3) {
-                        nextGrid[x][y] = 1;
-                    }
-                }
+                nextGrid[x][y] = isAliveNextGrid(y, x);
             }
         }
         this.grid = nextGrid;
         return nextGrid;
+    }
+
+    private int isAliveNextGrid(int y, int x) {
+        int aliveNeighbours = aliveNeighbours(x, y);
+        if (isAlive(x, y) && aliveNeighbours == 2 || aliveNeighbours == 3)
+            return 1;
+        return 0;
+    }
+
+    private boolean isAlive(int x, int y){
+        return getState(x, y) == 1;
     }
 
     public static void main(String[] args) {
@@ -101,6 +101,5 @@ public class Board {
             board.nextGrid();
             count++;
         }
-
     }
 }

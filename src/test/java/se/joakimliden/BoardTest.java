@@ -1,5 +1,6 @@
 package se.joakimliden;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -9,11 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardTest {
 
     ConsolePrint consolePrint = new ConsolePrint();
+    Board board;
 
+    @BeforeEach
+    void setUp() {
+        board = new Board(5,8);
+    }
 
     @Test
     void givenANewBoardShouldReturnNewGrid() {
-        Board board = new Board(5,8);
 
         String expected = Arrays.deepToString(board.getGrid());
         String actual = Arrays.deepToString(board.nextGrid());
@@ -28,14 +33,12 @@ class BoardTest {
 
     @Test
     void settingACellToAliveSetsItAlive() {
-        Board board = new Board(5, 8);
 
         assertEquals(1, board.setAlive(2, 2));
     }
 
     @Test
     void givenACellHasOneLiveNeighboursItCountsOneAliveNeighbours() {
-        Board board = new Board(5, 8);
 
         board.setAlive(2, 2);
 
@@ -44,7 +47,6 @@ class BoardTest {
 
     @Test
     void givenACellHasTwoLiveNeighboursItCountsTwoAliveNeighbours() {
-        Board board = new Board(5, 8);
 
         board.setAlive(2, 2);
         board.setAlive(2, 4);
@@ -54,14 +56,12 @@ class BoardTest {
 
     @Test
     void checkingStateForCellOutsideGridShouldReturn0() {
-        Board board = new Board(5, 8);
 
         assertEquals(0, board.getState(6, -1));
     }
 
     @Test
     void checkingStateForAliveCellShouldReturn1() {
-        Board board = new Board(5, 8);
 
         board.setAlive(2, 2);
 
@@ -70,21 +70,18 @@ class BoardTest {
 
     @Test
     void checkingStateForDeadCellShouldReturn0() {
-        Board board = new Board(5, 8);
 
         assertEquals(0, board.getState(2, 2));
     }
 
     @Test
     void checkingForAliveNeighboursOutsideOfGridShouldReturn0() {
-        Board board = new Board(5, 8);
 
         assertEquals(0, board.aliveNeighbours(0, 8));
     }
 
     @Test
     void livingCellWithLessThanTwoAliveNeighboursDieNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 1);
         int[][] nextGrid = board.nextGrid();
@@ -94,7 +91,6 @@ class BoardTest {
 
     @Test
     void livingCellWithMoreThanThreeAliveNeighboursDieNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(0, 1);
@@ -108,7 +104,6 @@ class BoardTest {
 
     @Test
     void livingCellWithTwoAliveNeighboursLivesNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(1, 1);
@@ -120,7 +115,6 @@ class BoardTest {
 
     @Test
     void livingCellWithThreeAliveNeighboursLivesNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(0, 1);
@@ -133,7 +127,6 @@ class BoardTest {
 
     @Test
     void deadCellWithExactlyThreeAliveNeighboursLivesNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(0, 1);
@@ -145,7 +138,6 @@ class BoardTest {
 
     @Test
     void gridGenerationIncreasesByOneEachTimeNextGridRuns() {
-        Board board = new Board(5, 8);
 
         int before = board.getGridGeneration();
 
@@ -156,7 +148,6 @@ class BoardTest {
 
     @Test
     void checkingThatPrintGridMethodHasExpectedOutcomeForEmptyBoard() {
-        Board board = new Board(5, 8);
 
         String expected =
                 """
@@ -176,7 +167,6 @@ class BoardTest {
 
     @Test
     void checkingThatPrintGridMethodHasExpectedOutcomeForBoardWithAliveCells() {
-        Board board = new Board(5,8);
 
         board.setAlive(0, 0);
         board.setAlive(1, 1);
