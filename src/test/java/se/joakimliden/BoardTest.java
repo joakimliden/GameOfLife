@@ -113,4 +113,18 @@ public class BoardTest {
 
         assertEquals(0, nextGrid[1][1]);
     }
+
+    @Test
+    void livingCellWithMoreThanThreeAliveNeighboursDieNextGrid() {
+        Board board = new Board(5, 8);
+
+        board.setAlive(1, 0);
+        board.setAlive(0, 1);
+        board.setAlive(1, 1);
+        board.setAlive(2, 1);
+        board.setAlive(1, 2);
+
+        int[][] nextGrid = board.nextGrid();
+        assertEquals(0, nextGrid[1][1]);
+    }
 }
