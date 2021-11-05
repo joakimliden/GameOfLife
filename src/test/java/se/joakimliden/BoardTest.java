@@ -93,7 +93,6 @@ public class BoardTest {
 
     @Test
     void livingCellWithThreeAliveNeighboursLivesNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(0, 1);
@@ -106,7 +105,6 @@ public class BoardTest {
 
     @Test
     void livingCellWithLessThanTwoAliveNeighboursDieNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 1);
         int[][] nextGrid = board.nextGrid();
@@ -116,7 +114,6 @@ public class BoardTest {
 
     @Test
     void livingCellWithMoreThanThreeAliveNeighboursDieNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(0, 1);
@@ -130,7 +127,6 @@ public class BoardTest {
 
     @Test
     void deadCellWithExactlyThreeAliveNeighboursLivesNextGrid() {
-        Board board = new Board(5, 8);
 
         board.setAlive(1, 0);
         board.setAlive(0, 1);
@@ -142,7 +138,6 @@ public class BoardTest {
 
     @Test
     void gridGenerationIncreasesByOneEachTimeNextGridRuns() {
-        Board board = new Board(5, 8);
 
         int before = board.gridGeneration;
 
