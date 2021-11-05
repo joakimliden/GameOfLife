@@ -52,4 +52,10 @@ public class BoardTest {
 
         assertEquals(2, board.aliveNeighbours(2, 3));
     }
+
+    @Test
+    void checkingStateForCellOutsideGridShouldReturn0() {
+
+        assertEquals(0, board.getState(6, -1));
+    }
 }
