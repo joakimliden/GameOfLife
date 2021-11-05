@@ -66,4 +66,10 @@ public class BoardTest {
 
         assertEquals(1, board.getState(2, 2));
     }
+
+    @Test
+    void checkingForAliveNeighboursOutsideOfGridShouldReturn0() {
+
+        assertEquals(0, board.aliveNeighbours(0, 8));
+    }
 }
