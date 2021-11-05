@@ -35,4 +35,12 @@ public class BoardTest {
 
         assertEquals(1, board.setAlive(2, 2));
     }
+
+    @Test
+    void givenACellHasOneLiveNeighboursItCountsOneAliveNeighbours() {
+
+        board.setAlive(2, 2);
+
+        assertEquals(1, board.aliveNeighbours(2, 3));
+    }
 }
