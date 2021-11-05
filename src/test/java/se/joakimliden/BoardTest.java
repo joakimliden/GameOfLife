@@ -72,4 +72,15 @@ public class BoardTest {
 
         assertEquals(0, board.aliveNeighbours(0, 8));
     }
+
+    @Test
+    void livingCellWithTwoAliveNeighboursLivesNextGrid() {
+
+        board.setAlive(1, 0);
+        board.setAlive(1, 1);
+        board.setAlive(1, 2);
+
+        int[][] nextGrid = board.nextGrid();
+        assertEquals(1, nextGrid[1][1]);
+    }
 }
