@@ -20,5 +20,7 @@ public class BoardTest {
     void givenANewBoardShouldReturnNewGrid() {
 
         String expected = Arrays.deepToString(board.grid);
+        String actual = Arrays.deepToString(board.nextGrid());
+        assertEquals(expected, actual);
     }
 }
