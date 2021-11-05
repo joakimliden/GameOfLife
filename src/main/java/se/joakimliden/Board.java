@@ -9,6 +9,7 @@ public class Board {
     public Board(int width, int height) {
         this.width = width;
         this.height = height;
+        this.grid = new int[width][height];
     }
 
     public int[][] nextGrid() {
@@ -16,6 +17,7 @@ public class Board {
     }
 
     public int setAlive(int x, int y) {
-        return 0;
+        grid[x][y] = 1;
+        return grid[x][y];
     }
 }
